@@ -1,0 +1,40 @@
+# The name of the package.
+name: easy_event_calender
+
+# A brief description of the package.
+description: "A simple event calender for Flutter."
+
+# The current version of the package.
+version: 0.0.1
+
+# The homepage URL for the package.
+homepage: https://github.com/abdullah-bd/easy_event_calender.git
+
+environment:
+  # The Dart SDK version required for this package.
+  sdk: ^3.5.3
+
+  # The Flutter SDK version required for this package.
+  flutter: ">=1.17.0"
+
+dependencies:
+  # The Flutter framework as a dependency.
+  flutter:
+    sdk: flutter
+
+  # The 'get' package for state management.
+  get: ^4.6.6
+
+  # The 'intl' package for internationalization and localization.
+  intl: ^0.19.0
+
+dev_dependencies:
+  # The Flutter testing framework.
+  flutter_test:
+    sdk: flutter
+
+  # The Flutter lints package for linting rules.
+  flutter_lints: ^4.0.0
+
+flutter:
+# Additional Flutter-specific configurations can be added here.
