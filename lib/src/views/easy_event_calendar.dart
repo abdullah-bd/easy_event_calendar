@@ -43,8 +43,10 @@ class EasyEventCalendar extends GetView<CustomCalenderController> {
     return Scaffold(
       body: SafeArea(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
