@@ -14,7 +14,7 @@ import 'component/day_name_item.dart';
 /// This widget uses the GetX package for state management and displays a calendar
 /// with event dates highlighted. It allows navigation between months and displays
 /// the days of the week and dates in a grid format.
-class EasyEventCalender extends GetView<CustomCalenderController> {
+class EasyEventCalendar extends GetView<CustomCalenderController> {
   /// A list of events to be displayed on the calendar.
   final List<CalendarEvent> eventDates;
 
@@ -24,11 +24,11 @@ class EasyEventCalender extends GetView<CustomCalenderController> {
   /// The color used for the calendar background.
   final MaterialColor calenderColor;
 
-  /// Creates an [EasyEventCalender] widget.
+  /// Creates an [EasyEventCalendar] widget.
   ///
   /// The [eventDates] parameter is required and specifies the list of events to be displayed.
   /// The [eventColor] and [calenderColor] parameters are optional and default to blue and green, respectively.
-  const EasyEventCalender({
+  const EasyEventCalendar({
     super.key,
     required this.eventDates,
     this.eventColor = Colors.blue,
