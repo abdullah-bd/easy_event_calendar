@@ -3,3 +3,4 @@ library easy_event_calender;
 
 /// Exporting the custom calendar controller from the src/controllers directory.
 export 'src/views/easy_event_calendar.dart';
+export 'src/data/calendar_event.dart';
