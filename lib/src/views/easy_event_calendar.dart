@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import '../data/calendar_event.dart';
 import '../theme/colors.dart';
 import '../theme/text_theme.dart';
-import '../controllers/custom_calender_controller.dart';
+import '../controllers/custom_calendar_controller.dart';
 import 'component/date_item.dart';
 import 'component/day_name_item.dart';
 

@@ -1,14 +1,14 @@
 # The name of the package.
-name: easy_event_calender
+name: easy_event_calendar
 
 # A brief description of the package.
-description: "A simple event calender for Flutter."
+description: "A simple event calendar for Flutter."
 
 # The current version of the package.
 version: 0.0.1
 
 # The homepage URL for the package.
-homepage: https://github.com/abdullah-bd/easy_event_calender.git
+homepage: https://github.com/abdullah-bd/easy_event_calendar.git
 
 environment:
   # The Dart SDK version required for this package.

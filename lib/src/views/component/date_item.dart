@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../../theme/colors.dart';
 import '../../theme/text_theme.dart';
-import '../../controllers/custom_calender_controller.dart';
+import '../../controllers/custom_calendar_controller.dart';
 import '../../data/month_date.dart';
 
 /// A widget that displays a date item in the calendar.
