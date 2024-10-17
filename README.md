@@ -5,6 +5,8 @@
 ![Popularity][pubdev-popularity]
 ![Points][pubdev-points]
 
+A simple event calendar for Flutter. Just pass events and this widget will show them in a calendar.
+
 ![banner][banner]
 
 
