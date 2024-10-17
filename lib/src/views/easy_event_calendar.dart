@@ -2,10 +2,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../controllers/custom_calendar_controller.dart';
 import '../data/calendar_event.dart';
 import '../theme/colors.dart';
 import '../theme/text_theme.dart';
-import '../controllers/custom_calendar_controller.dart';
 import 'component/date_item.dart';
 import 'component/day_name_item.dart';
 
@@ -40,89 +40,87 @@ class EasyEventCalendar extends GetView<CustomCalenderController> {
     Get.put(CustomCalenderController());
     controller.eventDates = eventDates;
 
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Column(
-              mainAxisSize: MainAxisSize.min,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Row(
-                      children: [
-                        IconButton(
-                          onPressed: () {
-                            controller.decrease(controller.selectedMonth.value);
-                          },
-                          icon: const Icon(
-                            Icons.arrow_back_ios,
-                            color: primaryDarkColor,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 12,
-                        ),
-                        IconButton(
-                          onPressed: () {
-                            controller.increaseMonth(controller.selectedMonth.value);
-                          },
-                          icon: const Icon(
-                            Icons.arrow_forward_ios,
-                            color: primaryDarkColor,
-                          ),
-                        ),
-                      ],
+                    IconButton(
+                      onPressed: () {
+                        controller.decrease(controller.selectedMonth.value);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: primaryDarkColor,
+                      ),
                     ),
-                    Obx(() => text_20_700(controller.selectedMonth.value, primaryDarkColor))
+                    const SizedBox(
+                      width: 12,
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        controller
+                            .increaseMonth(controller.selectedMonth.value);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_forward_ios,
+                        color: primaryDarkColor,
+                      ),
+                    ),
                   ],
                 ),
-                GridView.builder(
-                  shrinkWrap: true,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 7,
-                  ),
-                  itemCount: controller.list.length,
-                  itemBuilder: (context, index) {
-                    return dayNameItem(controller.list[index].dayName, index);
-                  },
-                ),
-                const SizedBox(
-                  height: 4,
-                ),
-                Obx(
-                      () => GridView.builder(
-                    shrinkWrap: true,
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 7,
-                      childAspectRatio: 40 / 44,
-                    ),
-                    itemCount: controller.calenderMonth.length,
-                    itemBuilder: (context, index) {
-                      return controller.calenderMonth[index].date != -1
-                          ? dateItem(
-                        controller.calenderMonth[index],
-                        controller,
-                        controller.selectedIndex,
-                        index,
-                            (String value) {
-                          if (kDebugMode) {
-                            print("date value: ${value.toString()}");
-                          }
-                        },
-                      )
-                          : dateItemContainer();
-                    },
-                  ),
-                ),
+                Obx(() => text_20_700(
+                    controller.selectedMonth.value, primaryDarkColor))
               ],
+            ),
+            GridView.builder(
+              shrinkWrap: true,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 7,
+              ),
+              itemCount: controller.list.length,
+              itemBuilder: (context, index) {
+                return dayNameItem(controller.list[index].dayName, index);
+              },
+            ),
+            const SizedBox(
+              height: 4,
+            ),
+            Obx(
+              () => GridView.builder(
+                shrinkWrap: true,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 7,
+                  childAspectRatio: 40 / 44,
+                ),
+                itemCount: controller.calenderMonth.length,
+                itemBuilder: (context, index) {
+                  return controller.calenderMonth[index].date != -1
+                      ? dateItem(
+                          controller.calenderMonth[index],
+                          controller,
+                          controller.selectedIndex,
+                          index,
+                          (String value) {
+                            if (kDebugMode) {
+                              print("date value: ${value.toString()}");
+                            }
+                          },
+                        )
+                      : dateItemContainer();
+                },
+              ),
             ),
           ],
         ),
-      ),
+      ],
     );
   }
 }
@@ -152,7 +150,8 @@ Widget dateItemContainer() {
 /// - [isSelected]: Whether the chip is selected.
 /// - [onClick]: The callback to be triggered when the chip is tapped.
 /// - [isIcon]: Whether to display an icon next to the title.
-Widget chips(String title, bool isSelected, Function() onClick, [bool isIcon = false]) {
+Widget chips(String title, bool isSelected, Function() onClick,
+    [bool isIcon = false]) {
   return InkWell(
     onTap: () {
       onClick();
@@ -179,15 +178,16 @@ Widget chips(String title, bool isSelected, Function() onClick, [bool isIcon = f
               children: [
                 isIcon == true
                     ? const Row(
-                  children: [
-                    Icon(Icons.add),
-                    SizedBox(
-                      width: 8,
-                    ),
-                  ],
-                )
+                        children: [
+                          Icon(Icons.add),
+                          SizedBox(
+                            width: 8,
+                          ),
+                        ],
+                      )
                     : Container(),
-                text_14_400(title, isSelected == true ? secondaryColor : primaryDarkColor),
+                text_14_400(title,
+                    isSelected == true ? secondaryColor : primaryDarkColor),
               ],
             ),
           ),
