@@ -54,7 +54,7 @@ packages:
     description:
       path: "."
       ref: master
-      resolved-ref: c4c2a7beb1571296934e1d04930d306b2424b0ce
+      resolved-ref: "59e72c5a6d510a3901f1809b7b6556c86cbffbe3"
       url: "https://github.com/abdullah-bd/easy_event_calendar.git"
     source: git
     version: "0.0.1"

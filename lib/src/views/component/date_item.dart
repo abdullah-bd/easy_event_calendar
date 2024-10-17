@@ -26,8 +26,8 @@ Widget dateItem(MonthDate monthDate, CustomCalenderController controller,
         },
         child: Card(
           color: selectedIndex.value == monthDate.date
-              ? primaryDarkColor
-              : controller.calenderColor,
+              ? controller.calenderColor
+              : calenderDateBackground,
           surfaceTintColor: calenderDateBackground,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(4.0),
