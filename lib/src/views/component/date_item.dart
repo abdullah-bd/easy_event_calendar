@@ -63,7 +63,7 @@ Widget dateItem(MonthDate monthDate, CustomCalenderController controller,
                       ? 0
                       : controller.isHasEventPosition(monthDate.actualDate),
                   itemBuilder: (context, index) {
-                    return dot(Colors.blue);
+                    return dot(controller.eventColor);
                   },
                 )
               ],

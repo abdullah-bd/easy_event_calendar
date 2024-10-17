@@ -36,5 +36,5 @@ dev_dependencies:
   # The Flutter lints package for linting rules.
   flutter_lints: ^4.0.0
 
-flutter:
+
 # Additional Flutter-specific configurations can be added here.

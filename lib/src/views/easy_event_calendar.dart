@@ -39,6 +39,8 @@ class EasyEventCalendar extends GetView<CustomCalenderController> {
   Widget build(BuildContext context) {
     Get.put(CustomCalenderController());
     controller.eventDates = eventDates;
+    controller.eventColor = eventColor;
+    controller.calenderColor = calenderColor;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -56,9 +58,9 @@ class EasyEventCalendar extends GetView<CustomCalenderController> {
                       onPressed: () {
                         controller.decrease(controller.selectedMonth.value);
                       },
-                      icon: const Icon(
+                      icon:  Icon(
                         Icons.arrow_back_ios,
-                        color: primaryDarkColor,
+                        color: calenderColor,
                       ),
                     ),
                     const SizedBox(
@@ -69,15 +71,15 @@ class EasyEventCalendar extends GetView<CustomCalenderController> {
                         controller
                             .increaseMonth(controller.selectedMonth.value);
                       },
-                      icon: const Icon(
+                      icon:  Icon(
                         Icons.arrow_forward_ios,
-                        color: primaryDarkColor,
+                        color: calenderColor,
                       ),
                     ),
                   ],
                 ),
                 Obx(() => text_20_700(
-                    controller.selectedMonth.value, primaryDarkColor))
+                    controller.selectedMonth.value, calenderColor))
               ],
             ),
             GridView.builder(

@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/src/material/colors.dart';
 import 'package:get/get.dart';
 
 import '../data/calendar_event.dart';
@@ -40,6 +41,10 @@ class CustomCalenderController extends GetxController {
 
   /// List of events to be displayed on the calendar.
   List<CalendarEvent> eventDates = [];
+
+  MaterialColor eventColor = Colors.blue;
+
+  MaterialColor calenderColor = Colors.red;
 
   @override
   void onInit() {
