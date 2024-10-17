@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../theme/colors.dart';
-import '../../theme/text_theme.dart';
 import '../../controllers/custom_calendar_controller.dart';
 import '../../data/month_date.dart';
+import '../../theme/colors.dart';
+import '../../theme/text_theme.dart';
 
 /// A widget that displays a date item in the calendar.
 ///
@@ -17,12 +17,13 @@ import '../../data/month_date.dart';
 /// - [index]: The index of this date item in the calendar grid.
 /// - [onClick]: The callback to be triggered when the date is tapped.
 Widget dateItem(MonthDate monthDate, CustomCalenderController controller,
-    RxInt selectedIndex, int index, Function(String val) onClick) {
+    RxInt selectedIndex, int index, Function(DateTime dateTime) onClick) {
   return Obx(() => GestureDetector(
         onTap: () {
           selectedIndex.value =
               selectedIndex.value != monthDate.date ? monthDate.date : -1;
-          onClick(monthDate.actualDate);
+
+          onClick(DateTime.parse(monthDate.actualDate));
         },
         child: Card(
           color: selectedIndex.value == monthDate.date

@@ -24,6 +24,8 @@ class EasyEventCalendar extends GetView<CustomCalenderController> {
   /// The color used for the calendar background.
   final MaterialColor calenderColor;
 
+  final Function(DateTime dateTime) onDateClick;
+
   /// Creates an [EasyEventCalendar] widget.
   ///
   /// The [eventDates] parameter is required and specifies the list of events to be displayed.
@@ -31,6 +33,7 @@ class EasyEventCalendar extends GetView<CustomCalenderController> {
   const EasyEventCalendar({
     super.key,
     required this.eventDates,
+    required this.onDateClick,
     this.eventColor = Colors.blue,
     this.calenderColor = Colors.green,
   });
@@ -110,11 +113,7 @@ class EasyEventCalendar extends GetView<CustomCalenderController> {
                           controller,
                           controller.selectedIndex,
                           index,
-                          (String value) {
-                            if (kDebugMode) {
-                              print("date value: ${value.toString()}");
-                            }
-                          },
+                          onDateClick,
                         )
                       : dateItemContainer();
                 },
@@ -125,6 +124,8 @@ class EasyEventCalendar extends GetView<CustomCalenderController> {
       ],
     );
   }
+
+
 }
 
 /// A widget that displays an empty date item container.
