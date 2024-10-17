@@ -1,5 +1,5 @@
-## 0.0.2
+## 0.0.2+1
 
-* Add `eventColor` property to change the color of the events on the calendar.
-* Add `calenderColor` property to change the color of the calendar.
-* Some Bug Fixes.
+* Call back function added to get the date value when a date is tapped.
+* Added a new parameter to change the color of the calendar.
+

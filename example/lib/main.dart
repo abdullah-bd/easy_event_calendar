@@ -1,4 +1,5 @@
 import 'package:easy_event_calendar/easy_event_calendar.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,6 +18,15 @@ void main() {
           body: EasyEventCalendar(
         // List of calendar events to be displayed on the calendar.
         eventDates: eventDates,
+        // The callback to be triggered when a date is tapped.
+        onDateClick: (DateTime dateTime) {
+          if (kDebugMode) {
+            print("date value: ${dateTime.toString()}");
+          }
+        },
+        //or
+        // onDateClick: onClick,
+
         // The color of the calendar.
         calenderColor: Colors.brown,
         // The color of the events on the calendar.
@@ -24,4 +34,10 @@ void main() {
       )),
     ),
   );
+
+  onClick(DateTime dateTime) {
+    if (kDebugMode) {
+      print("date value: ${dateTime.toString()}");
+    }
+  }
 }

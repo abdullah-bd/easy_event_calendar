@@ -54,10 +54,10 @@ packages:
     description:
       path: "."
       ref: master
-      resolved-ref: "5a08134a275c78986bb26bc9cab0826d16b8fb07"
+      resolved-ref: "896496aaa6c8f5cdf7826a8be1a03f3ec9be1508"
       url: "https://github.com/abdullah-bd/easy_event_calendar.git"
     source: git
-    version: "0.0.1"
+    version: "0.0.2"
   fake_async:
     dependency: transitive
     description:
