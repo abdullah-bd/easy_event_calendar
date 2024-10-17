@@ -19,28 +19,28 @@ import '../../data/month_date.dart';
 Widget dateItem(MonthDate monthDate, CustomCalenderController controller,
     RxInt selectedIndex, int index, Function(String val) onClick) {
   return Obx(() => GestureDetector(
-    onTap: () {
-      selectedIndex.value =
-      selectedIndex.value != monthDate.date ? monthDate.date : -1;
-      onClick(monthDate.actualDate);
-    },
-    child: Card(
-      color: selectedIndex.value == monthDate.date
-          ? primaryDarkColor
-          : calenderDateBackground,
-      surfaceTintColor: calenderDateBackground,
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4.0),
-          side: BorderSide(
-              width: monthDate.isCurrent ? 1 : 0,
-              color: monthDate.isCurrent
-                  ? primaryDarkColor
-                  : calenderDateBackground)),
-      elevation: 0,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        child: Center(
-            child: Column(
+        onTap: () {
+          selectedIndex.value =
+              selectedIndex.value != monthDate.date ? monthDate.date : -1;
+          onClick(monthDate.actualDate);
+        },
+        child: Card(
+          color: selectedIndex.value == monthDate.date
+              ? primaryDarkColor
+              : controller.calenderColor,
+          surfaceTintColor: calenderDateBackground,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(4.0),
+              side: BorderSide(
+                  width: monthDate.isCurrent ? 1 : 0,
+                  color: monthDate.isCurrent
+                      ? primaryDarkColor
+                      : calenderDateBackground)),
+          elevation: 0,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Center(
+                child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 text_16_400(
@@ -48,29 +48,29 @@ Widget dateItem(MonthDate monthDate, CustomCalenderController controller,
                     selectedIndex.value == monthDate.date
                         ? Colors.white
                         : controller.isFridayOrSaturday(monthDate.actualDate)
-                        ? redLight
-                        : calenderTextColor),
+                            ? redLight
+                            : calenderTextColor),
                 const SizedBox(
                   height: 4,
                 ),
                 GridView.builder(
                   shrinkWrap: true,
-                  gridDelegate:
-                  const SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4,
                   ),
-                  itemCount: controller.isHasEventPosition(monthDate.actualDate) == -1
-                      ? 0
-                      : controller.isHasEventPosition(monthDate.actualDate),
+                  itemCount:
+                      controller.isHasEventPosition(monthDate.actualDate) == -1
+                          ? 0
+                          : controller.isHasEventPosition(monthDate.actualDate),
                   itemBuilder: (context, index) {
                     return dot(controller.eventColor);
                   },
                 )
               ],
             )),
-      ),
-    ),
-  ));
+          ),
+        ),
+      ));
 }
 
 /// A widget that displays an empty date item container.

@@ -58,7 +58,7 @@ class EasyEventCalendar extends GetView<CustomCalenderController> {
                       onPressed: () {
                         controller.decrease(controller.selectedMonth.value);
                       },
-                      icon:  Icon(
+                      icon: Icon(
                         Icons.arrow_back_ios,
                         color: calenderColor,
                       ),
@@ -71,15 +71,15 @@ class EasyEventCalendar extends GetView<CustomCalenderController> {
                         controller
                             .increaseMonth(controller.selectedMonth.value);
                       },
-                      icon:  Icon(
+                      icon: Icon(
                         Icons.arrow_forward_ios,
                         color: calenderColor,
                       ),
                     ),
                   ],
                 ),
-                Obx(() => text_20_700(
-                    controller.selectedMonth.value, calenderColor))
+                Obx(() =>
+                    text_20_700(controller.selectedMonth.value, calenderColor))
               ],
             ),
             GridView.builder(
