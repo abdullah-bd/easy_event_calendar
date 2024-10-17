@@ -15,8 +15,11 @@ void main() {
     MaterialApp(
       home: Scaffold(
           body: EasyEventCalendar(
+        // List of calendar events to be displayed on the calendar.
         eventDates: eventDates,
+        // The color of the calendar.
         calenderColor: Colors.brown,
+        // The color of the events on the calendar.
         eventColor: Colors.purple,
       )),
     ),

@@ -2,7 +2,7 @@
 name: easy_event_calendar
 
 # A brief description of the package.
-description: "A simple event calendar for Flutter."
+description: "A simple event calendar for Flutter. Just pass events and this widget will show them in a calendar."
 
 # The current version of the package.
 version: 0.0.1

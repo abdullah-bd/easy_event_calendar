@@ -41,7 +41,22 @@ void main() {
   ];
   runApp(
     MaterialApp(
-      home: Scaffold(body: EasyEventCalendar(eventDates: eventDates)),
+      home: Scaffold(
+          body:
+          /// A widget that displays an event calendar.
+          ///
+          /// This widget uses the GetX package for state management and displays a calendar
+          /// with event dates highlighted. It allows navigation between months and displays
+          /// the days of the week and dates in a grid format.
+          
+          EasyEventCalendar(
+            // List of calendar events to be displayed on the calendar.
+            eventDates: eventDates,
+            // The color of the calendar.
+            calenderColor: Colors.brown,
+            // The color of the events on the calendar.
+            eventColor: Colors.purple,
+          )),
     ),
   );
 }
