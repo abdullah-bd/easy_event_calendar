@@ -68,4 +68,4 @@ void main() {
 [pubdev-likes]: https://img.shields.io/pub/likes/easy_event_calendar?logo=dart
 [pubdev-popularity]: https://img.shields.io/pub/popularity/easy_event_calendar?logo=dart
 [pubdev-points]: https://img.shields.io/pub/points/easy_event_calendar?logo=dart
-[banner]: blob:https://github.com/c678ca80-a978-4119-9db5-19f0bf9e0f2e
+[banner]: https://github.com/abdullah-bd/easy_event_calendar/blob/3bd377cfc1a8ab2d4b5553ce334df164417b8a04/screenshots/shot1.png?raw=true
