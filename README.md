@@ -62,3 +62,9 @@ void main() {
 }
 
 ```
+
+
+[pubdev-package]: https://img.shields.io/pub/v/easy_event_calendar.svg
+[pubdev-likes]: https://img.shields.io/pub/likes/easy_event_calendar?logo=dart
+[pubdev-popularity]: https://img.shields.io/pub/popularity/easy_event_calendar?logo=dart
+[pubdev-points]: https://img.shields.io/pub/points/easy_event_calendar?logo=dart
