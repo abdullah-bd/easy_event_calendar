@@ -1,3 +1,5 @@
-## 0.0.1
+## 0.0.2
 
-* Initial version with basic functionality
+* Add `eventColor` property to change the color of the events on the calendar.
+* Add `calenderColor` property to change the color of the calendar.
+* Some Bug Fixes.
